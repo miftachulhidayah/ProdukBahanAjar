@@ -1359,23 +1359,26 @@
     async function sendDataToSheet(data) {
   try {
 
-    const response = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
+  const response = await fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
 
-    const result = await response.json();   // 🔥 INI KUNCINYA
-    console.log(result);                    // 🔥 DEBUG WAJIB
+  console.log("RAW RESPONSE:", response);     // 🔥 DEBUG 1
 
-    return result.status === "success";
+  const result = await response.json();
 
-  } catch (error) {
-    console.error("Error sending data:", error);
-    return false;
-  }
+  console.log("JSON RESULT:", result);         // 🔥 DEBUG 2
+
+  return result.status === "success";
+
+} catch (error) {
+
+  console.error("Error sending data:", error);
+  return false;
 }
 
     // ===== SIMPAN PROFIL =====
