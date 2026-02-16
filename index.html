@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<!-- saved from url=(0141)https://c1rng261k95qpg8d.canvacode.com/codelet/AAEAEGMxcm5nMjYxazk1cXBnOGQAAAAAAZxp65FJUbmfs_-bN_blbcQRPQFCOLfjTWn6YSTfGLk3KVcNYfM/index.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5, user-scalable=yes">
+  <title>Petualangan Kata - Bahan Ajar Digital</title>
+  <script src="./element_sdk.js.download"></script>
+  <script src="./data_sdk.js.download"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      overflow: hidden;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    input, textarea, select, button {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+
+    #app {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+
+    /* HALAMAN PEMBUKA */
+    .halaman-pembuka {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 15px;
+      background: linear-gradient(180deg, #f8f9ff 0%, #f0f4ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo-item {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-item img {
+      max-height: 60px;
+      max-width: 100px;
+      object-fit: contain;
+      loading: lazy;
+    }
+
+    .main-image {
+      width: 90%;
+      max-width: 480px;
+      margin: 12px auto;
+      border-radius: 12px;
+      overflow: visible;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      padding: 12px;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    .judul-section {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .judul-utama {
+      font-size: 2em;
+      font-weight: 800;
+      color: #667eea;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .judul-sub {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .judul-deskripsi {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .penulis-section {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 450px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 95%;
+    }
+
+    .penulis-label {
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
+    .penulis-item {
+      color: #333;
+      margin: 6px 0;
+      font-size: 0.9em;
+      padding-left: 12px;
+    }
+
+    .btn-mulai {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 20px 0;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-mulai:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-mulai:active {
+      transform: translateY(0);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      gap: 8px;
+      flex-wrap: wrap;
+      min-height: 50px;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #667eea;
+      font-size: 1em;
+      white-space: nowrap;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85em;
+      font-weight: 600;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.active {
+      background: #764ba2;
+    }
+
+    .nav-btn-home {
+      background: #ff6b6b;
+    }
+
+    .nav-btn-home:hover {
+      background: #ff5252;
+    }
+
+    /* KONTEN HALAMAN */
+    .halaman-konten {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px;
+      background: linear-gradient(180deg, #f8f9ff 0%, #f0f4ff 100%);
+    }
+
+    .section-container {
+      max-width: 100%;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-size: 1.6em;
+      color: #667eea;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 12px;
+    }
+
+    .section-content {
+      color: #333;
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    .section-content p {
+      margin-bottom: 12px;
+    }
+
+    .section-content h3 {
+      color: #764ba2;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .section-content ul, .section-content ol {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .section-content li {
+      margin-bottom: 6px;
+    }
+
+    /* PROFILE FORM */
+    .profile-form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+      font-size: 0.95em;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      font-size: 0.95em;
+      transition: all 0.3s;
+      min-height: 44px;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    /* NIROKKE SECTION */
+    .template-box {
+      background: #f9f9ff;
+      border-left: 4px solid #667eea;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .template-box h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .template-input {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 8px 0;
+      font-size: 0.9em;
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .emoji {
+      margin-right: 6px;
+    }
+
+    /* VIDEO SECTION */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* QUIZ SECTION */
+    .quiz-container {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .quiz-question {
+      margin-bottom: 18px;
+    }
+
+    .quiz-question h4 {
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      margin: 8px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .quiz-option:active {
+      background: #e8e8ff;
+    }
+
+    .quiz-option input[type="radio"] {
+      margin-right: 10px;
+      margin-top: 3px;
+      cursor: pointer;
+      min-width: 20px;
+    }
+
+    .quiz-result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f4ff;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .quiz-result.show {
+      display: block;
+      animation: slideIn 0.3s ease;
+    }
+
+    .score-display {
+      font-size: 2.2em;
+      font-weight: 800;
+      color: #667eea;
+      margin: 12px 0;
+    }
+
+    .score-label {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    /* PROFIL PENULIS */
+    .profil-penulis-container {
+      text-align: center;
+    }
+
+    .profil-penulis-image {
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profil-penulis-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* DAFTAR ISI */
+    .daftar-isi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 15px 0;
+    }
+
+    .daftar-isi-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    .daftar-isi-item:active {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    /* LOADING STATE */
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* STATUS MESSAGE */
+    .status-message {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: 600;
+      animation: slideIn 0.3s ease;
+      font-size: 0.9em;
+    }
+
+    .status-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .judul-utama {
+        font-size: 1.6em;
+      }
+
+      .section-title {
+        font-size: 1.4em;
+      }
+
+      .navbar {
+        min-height: 45px;
+      }
+
+      .nav-btn {
+        padding: 7px 10px;
+        font-size: 0.8em;
+      }
+
+      .btn-submit {
+        padding: 10px 15px;
+        font-size: 0.9em;
+      }
+
+      .main-image {
+        max-width: 350px;
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="./3.4.17" type="text/javascript"></script>
+ <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}</style></head>
+ <body>
+  <div id="app"><!-- HALAMAN PEMBUKA -->
+   <div id="halaman-pembuka" class="halaman-pembuka">
+    <div class="logo-section">
+     <div class="logo-item">
+      <img src="./images_ind1dc.jpg" alt="Logo Tut Wuri" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Logo tidak tersedia&#39;;">
+     </div>
+     <div class="logo-item">
+      <img src="./logo_ust_zrhpea.png" alt="Logo UST" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Logo tidak tersedia&#39;;">
+     </div>
+     <div class="logo-item">
+      <img src="./saintek_berdampak_yjt7up.png" alt="Logo Saintek Berdampak" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Logo tidak tersedia&#39;;">
+     </div>
+     <div class="logo-item">
+      <img src="./pendidikan_bermutu_untuk_semua_wdcztt.png" alt="Logo Pendidikan Bermutu" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Logo tidak tersedia&#39;;">
+     </div>
+    </div>
+    <div class="main-image">
+     <img src="./LANSCAPE_BARU_FIX_h2gunc.png" alt="Petualangan Kata" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Gambar tidak tersedia&#39;;">
+    </div>
+    <div class="judul-section">
+     <div class="judul-utama">
+      PETUALANGAN KATA
+     </div>
+     <div class="judul-sub">
+      Bahan Ajar Digital Teks Deskriptif Fase C Kelas 5 SD
+     </div>
+     <div class="judul-deskripsi">
+      Berbasis Pembelajaran Mendalam Terintegrasi Tri-N
+     </div>
+    </div>
+    <div class="penulis-section">
+     <div class="penulis-label">
+      Nama Penyusun:
+     </div>
+     <div class="penulis-item">
+      Miftachul Hidayah, S.Pd.
+     </div>
+     <div class="penulis-item">
+      Dr. Akbar Al-Masjid, M.Pd.
+     </div>
+     <div class="penulis-item">
+      Dr. Anang Sudigdo, M.Pd.
+     </div>
+    </div><button class="btn-mulai" onclick="mulaiMembaca()">MULAI BELAJAR</button>
+   </div><!-- NAVBAR -->
+   <div id="navbar" class="navbar" style="display: none;">
+    <div class="navbar-brand">
+     📚 Petualangan Kata
+    </div>
+    <div class="nav-buttons">
+     <button class="nav-btn nav-btn-home" onclick="kembaliKeAwal()">🏠 Awal</button> <button class="nav-btn" onclick="goToSection(&#39;dashboard&#39;)">Profil</button> <button class="nav-btn" onclick="goToSection(&#39;daftar-isi&#39;)">Daftar Isi</button> <button class="nav-btn" onclick="goToSection(&#39;uji-pemahaman&#39;)">Quiz</button> <button class="nav-btn" onclick="goToSection(&#39;menulis&#39;)">Tulis</button>
+    </div>
+   </div><!-- KONTEN HALAMAN -->
+   <div id="halaman-konten" class="halaman-konten" style="display: none;"><!-- DASHBOARD -->
+    <div id="dashboard-page" style="display: none;">
+     <div class="profile-form">
+      <h2 style="color: #667eea; margin-bottom: 20px; text-align: center;">👤 Profil Siswa</h2>
+      <form id="profile-form" onsubmit="simpanProfil(event)">
+       <div class="form-group">
+        <label for="nama-siswa">Nama Lengkap</label> <input type="text" id="nama-siswa" required="" placeholder="Nama lengkapmu">
+       </div>
+       <div class="form-group">
+        <label for="nomor-absen">Nomor Absen</label> <input type="text" id="nomor-absen" placeholder="01, 02, 03, dst">
+       </div>
+       <div class="form-group">
+        <label for="kelas">Kelas</label> <select id="kelas" required=""> <option value="">Pilih Kelas</option> <option value="5A">5A</option> <option value="5B">5B</option> <option value="5C">5C</option> <option value="5D">5D</option> </select>
+       </div>
+       <div class="form-group">
+        <label for="nama-sekolah">Nama Sekolah</label> <input type="text" id="nama-sekolah" placeholder="SD N...">
+       </div><button type="submit" class="btn-submit">Simpan Profil</button>
+      </form>
+      <div id="profile-status" style="margin-top: 15px;"></div>
+     </div>
+    </div><!-- DAFTAR ISI -->
+    <div id="daftar-isi-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📖 Daftar Isi</h2>
+      <div class="daftar-isi-grid">
+       <div class="daftar-isi-item" onclick="goToSection(&#39;kata-pengantar&#39;)">
+        Kata Pengantar
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;petunjuk&#39;)">
+        Petunjuk
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;capaian&#39;)">
+        Capaian
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;pemantik&#39;)">
+        Pemantik
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;materi&#39;)">
+        Materi
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;uji-pemahaman&#39;)">
+        Quiz
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;refleksi&#39;)">
+        Refleksi
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;glosarium&#39;)">
+        Glosarium
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;pustaka&#39;)">
+        Pustaka
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;profil&#39;)">
+        Profil
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;sinopsis&#39;)">
+        Sinopsis
+       </div>
+       <div class="daftar-isi-item" onclick="goToSection(&#39;penutup&#39;)">
+        Penutup
+       </div>
+      </div>
+     </div>
+    </div><!-- KATA PENGANTAR -->
+    <div id="kata-pengantar-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📝 Kata Pengantar</h2>
+      <div class="section-content">
+       <p>Assalamu'alaikum warahmatullahi wabarakatuh,</p>
+       <p>Puji syukur kami panjatkan kepada Tuhan Yang Maha Esa atas rahmat dan hidayah-Nya sehingga bahan ajar digital ini dapat diselesaikan dengan baik.</p>
+       <p>Bahan ajar "Petualangan Kata" ini dirancang khusus untuk siswa kelas 5 SD dalam mempelajari teks deskriptif dengan pendekatan Tri-N yang inovatif. Melalui pendekatan NITENI (Amati &amp; Kenali), NIROKKE (Susun &amp; Tiru), dan NAMBAHI (Kembangkan &amp; Kreasikan), kami mengajak siswa untuk belajar sambil berpetualang dalam dunia kata-kata yang indah.</p>
+       <p>Semoga bahan ajar ini dapat memberikan pengalaman belajar yang menyenangkan dan bermakna bagi semua siswa.</p>
+       <p>Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
+      </div>
+     </div>
+    </div><!-- PETUNJUK PENGGUNAAN -->
+    <div id="petunjuk-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">🎯 Petunjuk Penggunaan</h2>
+      <div class="section-content">
+       <h3>Cara Menggunakan Bahan Ajar Digital Ini:</h3>
+       <ol>
+        <li><strong>Isi Profil:</strong> Mulai dengan mengisi profil Anda di menu Dashboard terlebih dahulu.</li>
+        <li><strong>Baca Materi:</strong> Pelajari materi pembelajaran dengan cermat melalui video dan penjelasan yang disediakan.</li>
+        <li><strong>Praktik Menulis:</strong> Ikuti tugas-tugas di setiap tahap pembelajaran (NITENI, NIROKKE, dan NAMBAHI).</li>
+        <li><strong>Uji Pemahaman:</strong> Setelah mempelajari materi, kerjakan soal-soal uji pemahaman.</li>
+        <li><strong>Refleksi Diri:</strong> Isi refleksi untuk mengevaluasi pembelajaran Anda.</li>
+        <li><strong>Lihat Hasil:</strong> Semua pekerjaan Anda tersimpan otomatis dan dapat dilihat melalui Daftar Isi.</li>
+       </ol>
+       <div style="margin-top: 15px; padding: 12px; background: #f0f4ff; border-left: 4px solid #667eea; border-radius: 6px;">
+        <strong>💡 Tips:</strong> Gunakan perangkat yang nyaman, pastikan koneksi internet stabil, dan luangkan waktu yang cukup untuk setiap aktivitas.
+       </div>
+      </div>
+     </div>
+    </div><!-- CAPAIAN PEMBELAJARAN -->
+    <div id="capaian-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">🎓 Capaian Pembelajaran</h2>
+      <div class="section-content">
+       <div class="template-box">
+        <h4>Kompetensi Akhir</h4>
+        <p>Siswa mampu menulis berbagai tipe teks sederhana berdasarkan gagasan, hasil pengamatan, pengalaman, dan/atau imajinasi dengan rangkaian kalimat kompleks secara kreatif, menarik, dan/atau indah; serta menggunakan kaidah kebahasaan dan kosakata baru yang memiliki makna denotatif dan konotatif.</p>
+       </div>
+       <h3>Tujuan Pembelajaran (Model TRI-N)</h3>
+       <div class="template-box">
+        <h4>🔍 NITENI (Amati &amp; Kenali)</h4>
+        <p>Siswa mengamati objek dan contoh teks deskripsi melalui video untuk memahami struktur teks secara tepat.</p>
+       </div>
+       <div class="template-box">
+        <h4>✍️ NIROKKE (Susun &amp; Tiru)</h4>
+        <p>Siswa menyusun teks deskripsi berdasarkan hasil pengamatan panca indra secara mandiri sesuai struktur dan kaidah bahasa yang benar.</p>
+       </div>
+       <div class="template-box">
+        <h4>🌟 NAMBAHI (Kembangkan &amp; Kreasikan)</h4>
+        <p>Siswa mengembangkan ide kreatif menjadi teks deskripsi yang indah dengan percaya diri sebagai bentuk apresiasi terhadap lingkungan sekitar.</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- PEMANTIK -->
+    <div id="pemantik-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">⚡ Pemantik</h2>
+      <div class="section-content">
+       <p>Mari kita mulai petualangan kata dengan aktivitas pemantik berikut!</p>
+       <div class="template-box">
+        <h4>❓ Pertanyaan Reflektif</h4>
+        <p>Sebelum mempelajari teks deskripsi, jawab pertanyaan ini:</p>
+        <ul>
+         <li>Apa ruangan atau tempat favorit Anda?</li>
+         <li>Bagaimana Anda menggambarkan tempat tersebut kepada teman yang belum pernah ke sana?</li>
+         <li>Apa yang Anda lihat, dengar, rasakan, dan cium di tempat itu?</li>
+        </ul>
+       </div>
+       <div class="template-box">
+        <h4>🎬 Tantangan Sederhana</h4>
+        <p>Coba deskripsikan sebuah objek di sekitarmu (bisa meja, kursi, atau pohon) dalam 3-5 kalimat menggunakan kata-kata yang menarik!</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- MATERI PEMBELAJARAN -->
+    <div id="materi-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📚 Materi Pembelajaran</h2>
+      <div class="section-content">
+       <h3>🔍 TAHAP 1: NITENI (Amati &amp; Kenali)</h3>
+       <p>Perhatikan video-video berikut untuk mempelajari contoh teks deskriptif:</p>
+       <h4 style="color: #764ba2; margin-top: 15px;">Video 1: Contoh Teks Deskripsi Tema Tempat</h4>
+       <div class="video-container">
+        <iframe src="./FwghnQCNiAc.html" allowfullscreen="" loading="lazy"></iframe>
+       </div>
+       <h4 style="color: #764ba2;">Video 2: Contoh Teks Deskripsi Tema Tempat</h4>
+       <div class="video-container">
+        <iframe src="./rulKS1tNlIw.html" allowfullscreen="" loading="lazy"></iframe>
+       </div>
+       <div class="template-box">
+        <h4>📌 Catatan Penting dari Video</h4>
+        <p>Dari kedua video di atas, kita belajar bahwa:</p>
+        <ul>
+         <li><strong>Teks deskripsi</strong> adalah teks yang menggambarkan ciri-ciri khusus dari suatu objek, orang, atau tempat secara detail dan jelas.</li>
+         <li><strong>Strukturnya terdiri dari:</strong> Identifikasi (pembukaan), Deskripsi Bagian (isi), dan Penutup (kesimpulan)</li>
+         <li><strong>Menggunakan kata-kata indrawi</strong> yang menggambarkan apa yang kita lihat, dengar, rasakan, cium, dan rasakan.</li>
+         <li><strong>Tujuannya</strong> adalah membuat pembaca seolah-olah mengalami sendiri apa yang dideskripsikan.</li>
+        </ul>
+       </div>
+       <h3 style="margin-top: 20px;">Panduan Eksploratif Teks Deskripsi</h3>
+       <div class="template-box">
+        <h4>1️⃣ Struktur Teks Deskripsi</h4>
+        <ul>
+         <li><strong>Identifikasi:</strong> Memperkenalkan objek yang akan dideskripsikan</li>
+         <li><strong>Deskripsi Bagian:</strong> Menjelaskan ciri-ciri khusus secara detail</li>
+         <li><strong>Penutup:</strong> Memberikan kesan atau simpulan</li>
+        </ul>
+       </div>
+       <div class="template-box">
+        <h4>2️⃣ Pilihan Kata Indrawi</h4>
+        <ul>
+         <li><strong>Penglihatan:</strong> warna, bentuk, ukuran, tekstur</li>
+         <li><strong>Pendengaran:</strong> bunyi, suara, nyanyian, musik</li>
+         <li><strong>Sentuhan:</strong> kasar, halus, lembut, dingin, hangat</li>
+         <li><strong>Penciuman:</strong> harum, wangi, bau</li>
+         <li><strong>Pengecapan:</strong> manis, asam, pahit, gurih</li>
+        </ul>
+       </div>
+       <div class="template-box">
+        <h4>3️⃣ Kalimat Deskriptif yang Baik</h4>
+        <ul>
+         <li>Menggunakan kata sifat yang kuat dan menarik</li>
+         <li>Memberikan detail yang spesifik</li>
+         <li>Membuat pembaca bisa membayangkan objeknya</li>
+         <li>Menggunakan perbandingan (simile) atau ungkapan lain yang kreatif</li>
+        </ul>
+       </div>
+       <h3 style="margin-top: 20px;">✍️ TAHAP 2: NIROKKE (Susun &amp; Tiru)</h3>
+       <p>Saatnya Anda mempraktikkan menulis teks deskripsi! Mari kita mulai dengan tema "Rumahku".</p><button class="nav-btn" onclick="goToSection(&#39;menulis&#39;)" style="width: 100%; margin: 15px 0;">Mulai Menulis Teks Deskripsi</button>
+       <h3 style="margin-top: 20px;">🌟 TAHAP 3: NAMBAHI (Kembangkan &amp; Kreasikan)</h3>
+       <p>Setelah menyelesaikan tahap NIROKKE, Anda dapat mengembangkan kemampuan dengan memilih tema-tema kreatif lainnya dan mengeksplorasi kosakata baru!</p>
+      </div>
+     </div>
+    </div><!-- MENULIS TEKS DESKRIPSI -->
+    <div id="menulis-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">✍️ Menulis Teks Deskripsi</h2>
+      <form id="menulis-form" onsubmit="simpanTulisan(event)">
+       <div class="form-group">
+        <label for="pilih-tahap">Pilih Tahap</label> <select id="pilih-tahap" required="" onchange="updateTema()"> <option value="">-- Pilih Tahap --</option> <option value="NIROKKE">NIROKKE (Susun &amp; Tiru) - Tema: Rumahku</option> <option value="NAMBAHI">NAMBAHI (Kembangkan &amp; Kreasikan) - Pilih Tema Sendiri</option> </select>
+       </div>
+       <div class="form-group" id="tema-section" style="display: none;">
+        <label for="pilih-tema">Pilih Tema (untuk NAMBAHI)</label> <select id="pilih-tema"> <option value="">-- Pilih Tema --</option> <option value="Rumahku">Rumahku</option> <option value="Hewan Kesukaanku">Hewan Kesukaanku</option> <option value="Sekolahku">Sekolahku</option> <option value="Taman di Rumah">Taman di Rumah</option> <option value="Kolam Renang">Kolam Renang</option> <option value="Tempat Bermain Favorit">Tempat Bermain Favorit</option> </select>
+       </div>
+       <div class="form-group">
+        <label for="judul-tema">Judul/Tema Tulisanmu</label> <input type="text" id="judul-tema" readonly="" placeholder="Akan terisi otomatis">
+       </div><!-- TEMPLATE NIROKKE -->
+       <div id="template-nirokke" style="display: none;">
+        <h3 style="color: #764ba2; margin: 20px 0;">Template: "Rumahku"</h3>
+        <p style="color: #666; margin-bottom: 12px; font-style: italic;">Ikuti template ini untuk menulis teks deskripsi Anda:</p>
+        <div class="template-box">
+         <h4>📍 Identifikasi (Paragraf Pembuka)</h4>
+         <p><strong>Nama objek yang akan kamu deskripsikan:</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Rumahku sangat nyaman</p><textarea class="template-input" id="nirokke-identifikasi-1" placeholder="Nama atau gambaran umum rumahmu..."></textarea>
+         <p style="margin-top: 12px;"><strong>Lokasi atau gambaran umum:</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Rumahku terletak di Jalan Mawar No. 5…</p><textarea class="template-input" id="nirokke-identifikasi-2" placeholder="Letak dan gambaran umum rumahmu..."></textarea>
+        </div>
+        <div class="template-box">
+         <h4>🔍 Deskripsi Bagian (Paragraf Isi)</h4>
+         <p><span class="emoji">👁️</span><strong>Apa yang kamu LIHAT? (warna, bentuk, ukuran)</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Dinding rumahku berwarna putih bersih…</p><textarea class="template-input" id="nirokke-deskripsi-lihat" placeholder="Deskripsikan apa yang kamu lihat..."></textarea>
+         <p style="margin-top: 12px;"><span class="emoji">✋</span><strong>Apa yang kamu RASAKAN? (tekstur, suasana)</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Lantainya terasa sejuk diinjak…</p><textarea class="template-input" id="nirokke-deskripsi-rasakan" placeholder="Deskripsikan apa yang kamu rasakan..."></textarea>
+         <p style="margin-top: 12px;"><span class="emoji">👃</span><strong>Apa yang kamu CIUM? (aroma, bau)</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Aroma Melati dari taman depan…</p><textarea class="template-input" id="nirokke-deskripsi-cium" placeholder="Deskripsikan apa yang kamu cium..."></textarea>
+        </div>
+        <div class="template-box">
+         <h4>❤️ Penutup (Paragraf Penutup)</h4>
+         <p><strong>Kesan atau perasaanmu tentang objek tersebut:</strong></p>
+         <p style="color: #999; font-style: italic;">Contoh: Rumahku adalah tempat ternyaman di dunia…</p><textarea class="template-input" id="nirokke-penutup" placeholder="Tulis kesan atau perasaanmu..."></textarea>
+        </div>
+       </div><!-- TEMPLATE NAMBAHI -->
+       <div id="template-nambahi" style="display: none;">
+        <h3 style="color: #764ba2; margin: 20px 0;">Template Kreatif</h3>
+        <p style="color: #666; margin-bottom: 12px; font-style: italic;">Tulis teks deskripsi kreatifmu sesuai tema yang dipilih:</p>
+        <div class="template-box">
+         <h4>📍 Identifikasi</h4><textarea class="template-input" id="nambahi-identifikasi" placeholder="Perkenalkan tema/objekmu..."></textarea>
+        </div>
+        <div class="template-box">
+         <h4>🔍 Deskripsi</h4><textarea class="template-input" id="nambahi-deskripsi" placeholder="Deskripsikan detail tema/objekmu dengan kata-kata indrawi..."></textarea>
+        </div>
+        <div class="template-box">
+         <h4>❤️ Penutup</h4><textarea class="template-input" id="nambahi-penutup" placeholder="Tulis kesan atau perasaanmu..."></textarea>
+        </div>
+       </div>
+       <div id="tulisan-status" style="margin: 15px 0;"></div><button type="submit" class="btn-submit">💾 Simpan Tulisanku</button>
+      </form>
+     </div>
+    </div><!-- UJI PEMAHAMAN -->
+    <div id="uji-pemahaman-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📝 Uji Pemahaman</h2>
+      <form id="quiz-form" onsubmit="submitQuiz(event)">
+       <div class="quiz-container" id="quiz-container"><div class="quiz-question">
+          <h4>1. Apa tujuan utama teks deskripsi?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q0_o0" name="q0" value="0">
+              <label for="q0_o0" style="cursor: pointer; margin: 0; flex: 1;">Menceritakan sebuah peristiwa</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q0_o1" name="q0" value="1">
+              <label for="q0_o1" style="cursor: pointer; margin: 0; flex: 1;">Menggambarkan ciri-ciri khusus suatu objek secara detail</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q0_o2" name="q0" value="2">
+              <label for="q0_o2" style="cursor: pointer; margin: 0; flex: 1;">Memberikan petunjuk cara melakukan sesuatu</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q0_o3" name="q0" value="3">
+              <label for="q0_o3" style="cursor: pointer; margin: 0; flex: 1;">Menyajikan argumen atau pendapat</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>2. Berapa banyak paragraf pada umumnya dalam teks deskripsi?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q1_o0" name="q1" value="0">
+              <label for="q1_o0" style="cursor: pointer; margin: 0; flex: 1;">Satu paragraf saja</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q1_o1" name="q1" value="1">
+              <label for="q1_o1" style="cursor: pointer; margin: 0; flex: 1;">Dua paragraf</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q1_o2" name="q1" value="2">
+              <label for="q1_o2" style="cursor: pointer; margin: 0; flex: 1;">Tiga paragraf (Identifikasi, Deskripsi, Penutup)</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q1_o3" name="q1" value="3">
+              <label for="q1_o3" style="cursor: pointer; margin: 0; flex: 1;">Lima paragraf atau lebih</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>3. Manakah yang BUKAN termasuk kata indrawi?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q2_o0" name="q2" value="0">
+              <label for="q2_o0" style="cursor: pointer; margin: 0; flex: 1;">Berwarna merah</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q2_o1" name="q2" value="1">
+              <label for="q2_o1" style="cursor: pointer; margin: 0; flex: 1;">Terasa halus</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q2_o2" name="q2" value="2">
+              <label for="q2_o2" style="cursor: pointer; margin: 0; flex: 1;">Mengantuk berat</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q2_o3" name="q2" value="3">
+              <label for="q2_o3" style="cursor: pointer; margin: 0; flex: 1;">Berbau harum</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>4. Tahap Tri-N yang artinya 'Amati &amp; Kenali' adalah...</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q3_o0" name="q3" value="0">
+              <label for="q3_o0" style="cursor: pointer; margin: 0; flex: 1;">NIROKKE</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q3_o1" name="q3" value="1">
+              <label for="q3_o1" style="cursor: pointer; margin: 0; flex: 1;">NAMBAHI</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q3_o2" name="q3" value="2">
+              <label for="q3_o2" style="cursor: pointer; margin: 0; flex: 1;">NITENI</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q3_o3" name="q3" value="3">
+              <label for="q3_o3" style="cursor: pointer; margin: 0; flex: 1;">NITEMU</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>5. Panca indra yang digunakan untuk mendeskripsikan tekstur adalah...</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q4_o0" name="q4" value="0">
+              <label for="q4_o0" style="cursor: pointer; margin: 0; flex: 1;">Indra penglihatan</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q4_o1" name="q4" value="1">
+              <label for="q4_o1" style="cursor: pointer; margin: 0; flex: 1;">Indra pendengaran</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q4_o2" name="q4" value="2">
+              <label for="q4_o2" style="cursor: pointer; margin: 0; flex: 1;">Indra sentuhan</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q4_o3" name="q4" value="3">
+              <label for="q4_o3" style="cursor: pointer; margin: 0; flex: 1;">Indra penciuman</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>6. Manakah contoh kalimat deskriptif yang baik?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q5_o0" name="q5" value="0">
+              <label for="q5_o0" style="cursor: pointer; margin: 0; flex: 1;">Rumahku besar</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q5_o1" name="q5" value="1">
+              <label for="q5_o1" style="cursor: pointer; margin: 0; flex: 1;">Rumahku berwarna putih dengan dinding yang megah dan pintu berwarna cokelat</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q5_o2" name="q5" value="2">
+              <label for="q5_o2" style="cursor: pointer; margin: 0; flex: 1;">Rumahku ada</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q5_o3" name="q5" value="3">
+              <label for="q5_o3" style="cursor: pointer; margin: 0; flex: 1;">Rumahku mahal</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>7. Bagian mana yang digunakan untuk memperkenalkan objek dalam teks deskripsi?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q6_o0" name="q6" value="0">
+              <label for="q6_o0" style="cursor: pointer; margin: 0; flex: 1;">Deskripsi Bagian</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q6_o1" name="q6" value="1">
+              <label for="q6_o1" style="cursor: pointer; margin: 0; flex: 1;">Identifikasi</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q6_o2" name="q6" value="2">
+              <label for="q6_o2" style="cursor: pointer; margin: 0; flex: 1;">Penutup</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q6_o3" name="q6" value="3">
+              <label for="q6_o3" style="cursor: pointer; margin: 0; flex: 1;">Pengantar</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>8. Apa fungsi paragraf penutup dalam teks deskripsi?</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q7_o0" name="q7" value="0">
+              <label for="q7_o0" style="cursor: pointer; margin: 0; flex: 1;">Menambah kata-kata indrawi</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q7_o1" name="q7" value="1">
+              <label for="q7_o1" style="cursor: pointer; margin: 0; flex: 1;">Memberikan kesan atau simpulan tentang objek</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q7_o2" name="q7" value="2">
+              <label for="q7_o2" style="cursor: pointer; margin: 0; flex: 1;">Menjelaskan ciri-ciri detail objek</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q7_o3" name="q7" value="3">
+              <label for="q7_o3" style="cursor: pointer; margin: 0; flex: 1;">Memperkenalkan objek baru</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>9. Tahap NAMBAHI dalam Tri-N berarti...</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q8_o0" name="q8" value="0">
+              <label for="q8_o0" style="cursor: pointer; margin: 0; flex: 1;">Amati dan Kenali</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q8_o1" name="q8" value="1">
+              <label for="q8_o1" style="cursor: pointer; margin: 0; flex: 1;">Susun dan Tiru</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q8_o2" name="q8" value="2">
+              <label for="q8_o2" style="cursor: pointer; margin: 0; flex: 1;">Kembangkan dan Kreasikan</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q8_o3" name="q8" value="3">
+              <label for="q8_o3" style="cursor: pointer; margin: 0; flex: 1;">Pelajari dan Hafalkan</label>
+            </div>
+          
+        </div><div class="quiz-question">
+          <h4>10. Kata-kata indrawi digunakan untuk membuat deskripsi lebih...</h4>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q9_o0" name="q9" value="0">
+              <label for="q9_o0" style="cursor: pointer; margin: 0; flex: 1;">Panjang</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q9_o1" name="q9" value="1">
+              <label for="q9_o1" style="cursor: pointer; margin: 0; flex: 1;">Hidup dan menarik</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q9_o2" name="q9" value="2">
+              <label for="q9_o2" style="cursor: pointer; margin: 0; flex: 1;">Mudah</label>
+            </div>
+          
+            <div class="quiz-option">
+              <input type="radio" id="q9_o3" name="q9" value="3">
+              <label for="q9_o3" style="cursor: pointer; margin: 0; flex: 1;">Singkat</label>
+            </div>
+          
+        </div></div><button type="submit" class="btn-submit" style="margin-top: 20px;">✅ Cek Jawaban</button>
+      </form>
+      <div id="quiz-result" class="quiz-result"></div>
+     </div>
+    </div><!-- REFLEKSI -->
+    <div id="refleksi-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">🤔 Refleksi Diri</h2>
+      <form id="refleksi-form" onsubmit="simpanRefleksi(event)">
+       <div class="form-group">
+        <label for="refleksi-1"><strong>1. Apa yang paling menarik dari pembelajaran hari ini?</strong></label> <textarea id="refleksi-1" class="template-input" placeholder="Tuliskan tanggapanmu..." required=""></textarea>
+       </div>
+       <div class="form-group">
+        <label for="refleksi-2"><strong>2. Bagian mana yang paling sulit untuk dipahami?</strong></label> <textarea id="refleksi-2" class="template-input" placeholder="Tuliskan kesulitanmu..." required=""></textarea>
+       </div>
+       <div class="form-group">
+        <label for="refleksi-3"><strong>3. Apakah menulis teks deskripsi lebih mudah sekarang? Mengapa?</strong></label> <textarea id="refleksi-3" class="template-input" placeholder="Tuliskan jawabanmu..." required=""></textarea>
+       </div>
+       <div class="form-group">
+        <label for="refleksi-4"><strong>4. Apa yang ingin kamu pelajari lebih lanjut?</strong></label> <textarea id="refleksi-4" class="template-input" placeholder="Tuliskan harapanmu..." required=""></textarea>
+       </div>
+       <div id="refleksi-status" style="margin: 15px 0;"></div><button type="submit" class="btn-submit">💾 Simpan Refleksi</button>
+      </form>
+     </div>
+    </div><!-- GLOSARIUM -->
+    <div id="glosarium-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📚 Glosarium</h2>
+      <div class="section-content">
+       <h3>Istilah-istilah Penting</h3>
+       <div class="template-box">
+        <h4>Teks Deskripsi</h4>
+        <p>Teks yang menggambarkan ciri-ciri khusus dari suatu objek, orang, atau tempat secara detail dan jelas sehingga pembaca seolah-olah mengalami sendiri apa yang dideskripsikan.</p>
+       </div>
+       <div class="template-box">
+        <h4>Identifikasi</h4>
+        <p>Bagian pembuka dari teks deskripsi yang memperkenalkan objek yang akan dideskripsikan.</p>
+       </div>
+       <div class="template-box">
+        <h4>Deskripsi Bagian</h4>
+        <p>Bagian inti dari teks deskripsi yang menjelaskan ciri-ciri khusus objek secara detail.</p>
+       </div>
+       <div class="template-box">
+        <h4>Penutup</h4>
+        <p>Bagian akhir dari teks deskripsi yang memberikan kesan atau simpulan tentang objek.</p>
+       </div>
+       <div class="template-box">
+        <h4>Kata Indrawi</h4>
+        <p>Kata-kata yang menggambarkan apa yang kita lihat, dengar, rasakan, cium, dan rasakan untuk membuat deskripsi lebih hidup.</p>
+       </div>
+       <h3 style="margin-top: 20px;">Model Pembelajaran Tri-N</h3>
+       <div class="template-box">
+        <h4>NITENI (Amati &amp; Kenali)</h4>
+        <p>Tahap pertama di mana siswa mengamati contoh dan mempelajari hal-hal baru.</p>
+       </div>
+       <div class="template-box">
+        <h4>NIROKKE (Susun &amp; Tiru)</h4>
+        <p>Tahap kedua di mana siswa meniru dan mempraktikkan apa yang telah dipelajari.</p>
+       </div>
+       <div class="template-box">
+        <h4>NAMBAHI (Kembangkan &amp; Kreasikan)</h4>
+        <p>Tahap ketiga di mana siswa mengembangkan dan menambahkan unsur kreatif mereka sendiri.</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- DAFTAR PUSTAKA -->
+    <div id="pustaka-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📖 Daftar Pustaka</h2>
+      <div class="section-content">
+       <h3>Buku Referensi</h3>
+       <div style="margin-bottom: 15px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+        <p style="margin-bottom: 5px;"><strong>Lestari, Maya &amp; Zulqarnain</strong> (2024). <em>Bahasa Indonesia: Bergerak Bersama untuk SD/MI Kelas V (Edisi Revisi)</em>. Jakarta: Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</p>
+       </div>
+       <div style="margin-bottom: 15px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+        <p style="margin-bottom: 5px;"><strong>Verawaty, Evy &amp; Zulqarnain</strong> (2021). <em>Buku Panduan Guru Bahasa Indonesia: Bergerak Bersama untuk SD Kelas V</em>. Jakarta: Pusat Perbukuan, Kemdikbud.</p>
+       </div>
+       <h3>Artikel &amp; Jurnal</h3>
+       <div style="margin-bottom: 15px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+        <p style="margin-bottom: 5px;"><strong>Nazla Asyifa, Putri Azizah, &amp; Valen Tania</strong> (2024). Keterampilan Menulis Teks Deskripsi Dalam Pembelajaran Bahasa Indonesia Sekolah Dasar. <em>Semantik: Jurnal Riset Ilmu Pendidikan, Bahasa Dan Budaya</em>, 2(3), 244–252. https://doi.org/10.61132/semantik.v2i3.851</p>
+       </div>
+       <div style="margin-bottom: 15px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+        <p style="margin-bottom: 5px;"><strong>Nurinawati Nurinawati &amp; Siti Rochmiyati</strong> (2025). Model Pembelajaran Project Based Learning Berbasis Tri N untuk Meningkatkan Keterampilan Menulis Teks Prosedur. <em>Inovasi Pendidikan Dan Anak Usia Dini</em>, 2(4), 48–63. https://doi.org/10.61132/inpaud.v2i4.675</p>
+       </div>
+       <h3>Sumber Online</h3>
+       <div style="margin-bottom: 15px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+        <p style="margin-bottom: 5px;"><strong>Portal Rumah Belajar Kemdikbud:</strong> "Teks Deskriptif untuk Siswa SD". Diakses dari https://belajar.kemdikbud.go.id</p>
+       </div>
+       <h3>Video Pembelajaran</h3>
+       <ul>
+        <li><a href="https://youtu.be/FwghnQCNiAc" target="_blank" rel="noopener noreferrer">https://youtu.be/FwghnQCNiAc</a></li>
+        <li><a href="https://www.youtube.com/watch?v=rulKS1tNlIw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=rulKS1tNlIw</a></li>
+       </ul>
+      </div>
+     </div>
+    </div><!-- PROFIL PENULIS -->
+    <div id="profil-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">👥 Profil Penulis</h2>
+      <div class="profil-penulis-container">
+       <div class="profil-penulis-image">
+        <img src="./Profil_Penulis_badr4p.png" alt="Profil Penulis" loading="lazy" onerror="console.error(&#39;Image failed:&#39;, this.src); this.style.background=&#39;#e5e7eb&#39;; this.alt=&#39;Profil penulis tidak tersedia&#39;;">
+       </div>
+      </div>
+     </div>
+    </div><!-- SINOPSIS -->
+    <div id="sinopsis-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">📖 Sinopsis</h2>
+      <div class="section-content">
+       <p style="font-size: 1em; line-height: 1.8;">Petualangan Kata adalah bahan ajar digital inovatif yang dirancang khusus untuk siswa kelas 5 SD dalam pembelajaran menulis teks deskriptif. Dengan pendekatan pembelajaran mendalam Tri-N (Niteni, Nirokke, Nambahi), bahan ajar ini mengajak siswa untuk tidak hanya belajar tentang struktur dan ciri-ciri teks deskriptif, tetapi juga untuk merasakan pengalaman menulis yang bermakna dan menyenangkan.</p>
+       <p style="font-size: 1em; line-height: 1.8;">Melalui video pembelajaran, contoh-contoh konkret, dan aktivitas interaktif, siswa akan belajar mengamati dunia sekitar mereka dengan lebih teliti. Mereka akan mempraktikkan keterampilan menulis dengan template yang mudah diikuti, kemudian mengembangkan kreativitas mereka dengan menulis teks deskriptif tentang berbagai tema menarik. Hasil pembelajaran tersimpan otomatis dalam sistem, sehingga guru dapat memantau perkembangan setiap siswa dengan mudah.</p>
+       <p style="font-size: 1em; line-height: 1.8; margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 100%); border-left: 4px solid #667eea; border-radius: 6px;"><strong>Semoga bahan ajar ini menjadi jembatan yang indah antara dunia belajar dan petualangan kreatif siswa dalam menguasai seni menulis teks deskriptif!</strong></p>
+      </div>
+     </div>
+    </div><!-- PENUTUP -->
+    <div id="penutup-page" style="display: none;">
+     <div class="section-container">
+      <h2 class="section-title">🏁 Penutup</h2>
+      <div class="section-content">
+       <p>Selamat! Anda telah menyelesaikan perjalanan "Petualangan Kata" bersama kami. Melalui pembelajaran yang interaktif dan menyenangkan ini, Anda telah mempelajari cara menulis teks deskriptif dengan baik dan benar.</p>
+       <p style="margin-top: 15px;"><strong>Apa yang telah Anda capai:</strong></p>
+       <ul>
+        <li>✅ Memahami struktur dan ciri-ciri teks deskriptif</li>
+        <li>✅ Menguasai penggunaan kata-kata indrawi</li>
+        <li>✅ Mempraktikkan menulis teks deskriptif dengan berbagai tema</li>
+        <li>✅ Mengembangkan kreativitas melalui tulisan yang ekspresif</li>
+        <li>✅ Meningkatkan keterampilan menulis Anda secara keseluruhan</li>
+       </ul>
+       <p style="margin-top: 15px;"><strong>Langkah Berikutnya:</strong></p>
+       <p>Teruslah berlatih menulis! Setiap hari, coba deskripsikan sesuatu yang baru - bisa orang, hewan, tumbuhan, atau tempat. Semakin sering Anda berlatih, semakin mahir Anda menjadi. Jangan takut untuk bereksperimen dengan kata-kata dan mengekspresikan perasaan Anda melalui tulisan.</p>
+       <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; text-align: center;">
+        <h3>Terima kasih telah mengikuti Petualangan Kata! 🎉</h3>
+        <p style="margin-top: 8px;">Semoga Anda menjadi penulis yang berbakat dan percaya diri. Selamat terus berkarya!</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+    // ===== KONFIGURASI APPS SCRIPT =====
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbMV0dZvy93mYZP4U8Wh5vkc_NauAlM4E8tZ84qxoIl76XTB9Wx8UPAO5owl34RdtY2g/exec';
+
+    let allData = [];
+    let currentProfile = null;
+
+    // ===== DATA SDK HANDLER =====
+    const dataHandler = {
+      onDataChanged(data) {
+        allData = data;
+        updateUI();
+      }
+    };
+
+    async function initDataSDK() {
+      try {
+        const result = await window.dataSdk.init(dataHandler);
+        if (!result.isOk) {
+          console.error('Data SDK initialization failed');
+        }
+      } catch (e) {
+        console.error('Data SDK error:', e);
+      }
+    }
+
+    function updateUI() {
+      // Update any UI that depends on data
+    }
+
+    // ===== NAVIGATION FUNCTIONS =====
+    function mulaiMembaca() {
+      document.getElementById('halaman-pembuka').style.display = 'none';
+      document.getElementById('navbar').style.display = 'flex';
+      document.getElementById('halaman-konten').style.display = 'block';
+      goToSection('dashboard');
+    }
+
+    function kembaliKeAwal() {
+      document.getElementById('halaman-pembuka').style.display = 'flex';
+      document.getElementById('navbar').style.display = 'none';
+      document.getElementById('halaman-konten').style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+
+    function goToSection(section) {
+      const pages = document.querySelectorAll('[id$="-page"]');
+      pages.forEach(page => page.style.display = 'none');
+
+      const selectedPage = document.getElementById(section + '-page');
+      if (selectedPage) {
+        selectedPage.style.display = 'block';
+        window.scrollTo(0, 0);
+      }
+    }
+
+    function updateTema() {
+      const tahap = document.getElementById('pilih-tahap').value;
+      const temaSection = document.getElementById('tema-section');
+      const templateNirokke = document.getElementById('template-nirokke');
+      const templateNambahi = document.getElementById('template-nambahi');
+      const judulTema = document.getElementById('judul-tema');
+
+      if (tahap === 'NIROKKE') {
+        temaSection.style.display = 'none';
+        templateNirokke.style.display = 'block';
+        templateNambahi.style.display = 'none';
+        judulTema.value = 'Rumahku';
+      } else if (tahap === 'NAMBAHI') {
+        temaSection.style.display = 'block';
+        templateNirokke.style.display = 'none';
+        templateNambahi.style.display = 'block';
+        const tema = document.getElementById('pilih-tema').value || 'Pilih tema';
+        judulTema.value = tema;
+      }
+    }
+
+    document.addEventListener('change', function(e) {
+      if (e.target.id === 'pilih-tema') {
+        document.getElementById('judul-tema').value = e.target.value;
+      }
+    });
+
+    // ===== PENGIRIMAN DATA KE GOOGLE SHEETS =====
+    async function sendDataToSheet(data) {
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        return true;
+      } catch (error) {
+        console.error('Error sending data to sheets:', error);
+        return false;
+      }
+    }
+
+    // ===== SIMPAN PROFIL =====
+    async function simpanProfil(e) {
+      e.preventDefault();
+      const statusDiv = document.getElementById('profile-status');
+
+      const nama = document.getElementById('nama-siswa').value;
+      const absen = document.getElementById('nomor-absen').value;
+      const kelas = document.getElementById('kelas').value;
+      const sekolah = document.getElementById('nama-sekolah').value;
+
+      const profileData = {
+        tipe_data: 'PROFIL',
+        nama_siswa: nama,
+        nomor_absen: absen,
+        kelas: kelas,
+        nama_sekolah: sekolah,
+        judul_tema: 'Profil Siswa',
+        konten_tulisan: 'Profil telah diisi',
+        skor: '',
+        persentase: '',
+        waktu_simpan: new Date().toISOString()
+      };
+
+      statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
+
+      const result = await window.dataSdk.create(profileData);
+      await sendDataToSheet(profileData);
+
+      if (result.isOk) {
+        currentProfile = profileData;
+        statusDiv.innerHTML = '<div class="status-message status-success">✅ Profil berhasil disimpan! Selamat datang di Petualangan Kata!</div>';
+        setTimeout(() => {
+          statusDiv.innerHTML = '';
+        }, 3000);
+      } else {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Ada kesalahan. Silakan coba lagi.</div>';
+      }
+    }
+
+    // ===== SIMPAN TULISAN =====
+    async function simpanTulisan(e) {
+      e.preventDefault();
+      const statusDiv = document.getElementById('tulisan-status');
+
+      if (!currentProfile) {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Lengkapi profil Anda terlebih dahulu!</div>';
+        return;
+      }
+
+      if (allData.length >= 999) {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Batas maksimal data tercapai (999).</div>';
+        return;
+      }
+
+      const tahap = document.getElementById('pilih-tahap').value;
+      let konten_tulisan = '';
+
+      if (tahap === 'NIROKKE') {
+        konten_tulisan = `
+IDENTIFIKASI:
+${document.getElementById('nirokke-identifikasi-1').value}
+${document.getElementById('nirokke-identifikasi-2').value}
+
+DESKRIPSI BAGIAN:
+Penglihatan: ${document.getElementById('nirokke-deskripsi-lihat').value}
+Sentuhan: ${document.getElementById('nirokke-deskripsi-rasakan').value}
+Penciuman: ${document.getElementById('nirokke-deskripsi-cium').value}
+
+PENUTUP:
+${document.getElementById('nirokke-penutup').value}
+        `;
+      } else if (tahap === 'NAMBAHI') {
+        konten_tulisan = `
+IDENTIFIKASI:
+${document.getElementById('nambahi-identifikasi').value}
+
+DESKRIPSI:
+${document.getElementById('nambahi-deskripsi').value}
+
+PENUTUP:
+${document.getElementById('nambahi-penutup').value}
+        `;
+      }
+
+      const tulisanData = {
+        tipe_data: tahap,
+        nama_siswa: currentProfile.nama_siswa,
+        nomor_absen: currentProfile.nomor_absen,
+        kelas: currentProfile.kelas,
+        nama_sekolah: currentProfile.nama_sekolah,
+        judul_tema: document.getElementById('judul-tema').value,
+        konten_tulisan: konten_tulisan,
+        skor: '',
+        persentase: '',
+        waktu_simpan: new Date().toISOString()
+      };
+
+      statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
+
+      const result = await window.dataSdk.create(tulisanData);
+      await sendDataToSheet(tulisanData);
+
+      if (result.isOk) {
+        statusDiv.innerHTML = '<div class="status-message status-success">✅ Tulisan berhasil disimpan! Bagus sekali!</div>';
+        document.getElementById('menulis-form').reset();
+        document.getElementById('template-nirokke').style.display = 'none';
+        document.getElementById('template-nambahi').style.display = 'none';
+        setTimeout(() => {
+          statusDiv.innerHTML = '';
+        }, 3000);
+      } else {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
+      }
+    }
+
+    // ===== SIMPAN REFLEKSI =====
+    async function simpanRefleksi(e) {
+      e.preventDefault();
+      const statusDiv = document.getElementById('refleksi-status');
+
+      if (!currentProfile) {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Lengkapi profil Anda terlebih dahulu!</div>';
+        return;
+      }
+
+      const refleksiData = {
+        tipe_data: 'REFLEKSI',
+        nama_siswa: currentProfile.nama_siswa,
+        nomor_absen: currentProfile.nomor_absen,
+        kelas: currentProfile.kelas,
+        nama_sekolah: currentProfile.nama_sekolah,
+        judul_tema: 'Refleksi Pembelajaran',
+        konten_tulisan: `
+Hal Menarik: ${document.getElementById('refleksi-1').value}
+Bagian Sulit: ${document.getElementById('refleksi-2').value}
+Kemudahan Menulis: ${document.getElementById('refleksi-3').value}
+Ingin Pelajari: ${document.getElementById('refleksi-4').value}
+        `,
+        skor: '',
+        persentase: '',
+        waktu_simpan: new Date().toISOString()
+      };
+
+      statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
+
+      const result = await window.dataSdk.create(refleksiData);
+      await sendDataToSheet(refleksiData);
+
+      if (result.isOk) {
+        statusDiv.innerHTML = '<div class="status-message status-success">✅ Refleksi berhasil disimpan! Terima kasih!</div>';
+        document.getElementById('refleksi-form').reset();
+        setTimeout(() => {
+          statusDiv.innerHTML = '';
+        }, 3000);
+      } else {
+        statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
+      }
+    }
+
+    // ===== QUIZ DATA =====
+    const quizData = [
+      {
+        question: "Apa tujuan utama teks deskripsi?",
+        options: [
+          "Menceritakan sebuah peristiwa",
+          "Menggambarkan ciri-ciri khusus suatu objek secara detail",
+          "Memberikan petunjuk cara melakukan sesuatu",
+          "Menyajikan argumen atau pendapat"
+        ],
+        correct: 1
+      },
+      {
+        question: "Berapa banyak paragraf pada umumnya dalam teks deskripsi?",
+        options: [
+          "Satu paragraf saja",
+          "Dua paragraf",
+          "Tiga paragraf (Identifikasi, Deskripsi, Penutup)",
+          "Lima paragraf atau lebih"
+        ],
+        correct: 2
+      },
+      {
+        question: "Manakah yang BUKAN termasuk kata indrawi?",
+        options: [
+          "Berwarna merah",
+          "Terasa halus",
+          "Mengantuk berat",
+          "Berbau harum"
+        ],
+        correct: 2
+      },
+      {
+        question: "Tahap Tri-N yang artinya 'Amati & Kenali' adalah...",
+        options: [
+          "NIROKKE",
+          "NAMBAHI",
+          "NITENI",
+          "NITEMU"
+        ],
+        correct: 2
+      },
+      {
+        question: "Panca indra yang digunakan untuk mendeskripsikan tekstur adalah...",
+        options: [
+          "Indra penglihatan",
+          "Indra pendengaran",
+          "Indra sentuhan",
+          "Indra penciuman"
+        ],
+        correct: 2
+      },
+      {
+        question: "Manakah contoh kalimat deskriptif yang baik?",
+        options: [
+          "Rumahku besar",
+          "Rumahku berwarna putih dengan dinding yang megah dan pintu berwarna cokelat",
+          "Rumahku ada",
+          "Rumahku mahal"
+        ],
+        correct: 1
+      },
+      {
+        question: "Bagian mana yang digunakan untuk memperkenalkan objek dalam teks deskripsi?",
+        options: [
+          "Deskripsi Bagian",
+          "Identifikasi",
+          "Penutup",
+          "Pengantar"
+        ],
+        correct: 1
+      },
+      {
+        question: "Apa fungsi paragraf penutup dalam teks deskripsi?",
+        options: [
+          "Menambah kata-kata indrawi",
+          "Memberikan kesan atau simpulan tentang objek",
+          "Menjelaskan ciri-ciri detail objek",
+          "Memperkenalkan objek baru"
+        ],
+        correct: 1
+      },
+      {
+        question: "Tahap NAMBAHI dalam Tri-N berarti...",
+        options: [
+          "Amati dan Kenali",
+          "Susun dan Tiru",
+          "Kembangkan dan Kreasikan",
+          "Pelajari dan Hafalkan"
+        ],
+        correct: 2
+      },
+      {
+        question: "Kata-kata indrawi digunakan untuk membuat deskripsi lebih...",
+        options: [
+          "Panjang",
+          "Hidup dan menarik",
+          "Mudah",
+          "Singkat"
+        ],
+        correct: 1
+      }
+    ];
+
+    function generateQuiz() {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      
+      quizData.forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'quiz-question';
+        
+        let optionsHTML = '';
+        q.options.forEach((option, optIndex) => {
+          optionsHTML += `
+            <div class="quiz-option">
+              <input type="radio" id="q${index}_o${optIndex}" name="q${index}" value="${optIndex}">
+              <label for="q${index}_o${optIndex}" style="cursor: pointer; margin: 0; flex: 1;">${option}</label>
+            </div>
+          `;
+        });
+        
+        questionDiv.innerHTML = `
+          <h4>${index + 1}. ${q.question}</h4>
+          ${optionsHTML}
+        `;
+        container.appendChild(questionDiv);
+      });
+    }
+
+    async function submitQuiz(e) {
+      e.preventDefault();
+
+      if (!currentProfile) {
+        const resultDiv = document.getElementById('quiz-result');
+        resultDiv.classList.add('show');
+        resultDiv.innerHTML = '<div class="status-error">❌ Lengkapi profil Anda terlebih dahulu!</div>';
+        return;
+      }
+
+      let score = 0;
+      let answered = 0;
+
+      quizData.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected) {
+          answered++;
+          if (parseInt(selected.value) === q.correct) {
+            score++;
+          }
+        }
+      });
+
+      if (answered === 0) {
+        const resultDiv = document.getElementById('quiz-result');
+        resultDiv.classList.add('show');
+        resultDiv.innerHTML = '<div class="status-error">❌ Jawab minimal satu pertanyaan!</div>';
+        return;
+      }
+
+      const percentage = Math.round((score / quizData.length) * 100);
+      const resultDiv = document.getElementById('quiz-result');
+      resultDiv.classList.add('show');
+      resultDiv.innerHTML = `
+        <div class="score-label">Hasil Ujian Pemahaman Anda</div>
+        <div class="score-display">${score} / ${quizData.length}</div>
+        <div class="score-label">${percentage}%</div>
+        <div style="margin-top: 12px; font-size: 0.9em;">
+          ${percentage >= 80 ? '🎉 Sempurna! Kamu sudah menguasai materi dengan baik!' : 
+            percentage >= 60 ? '👍 Bagus! Kamu sudah memahami materi cukup baik.' : 
+            '📚 Teruskan belajar! Pelajari kembali materi yang belum dipahami.'}
+        </div>
+      `;
+
+      // Simpan quiz result
+      const quizResult = {
+        tipe_data: 'UJI_PEMAHAMAN',
+        nama_siswa: currentProfile.nama_siswa,
+        nomor_absen: currentProfile.nomor_absen,
+        kelas: currentProfile.kelas,
+        nama_sekolah: currentProfile.nama_sekolah,
+        judul_tema: 'Uji Pemahaman Teks Deskripsi',
+        konten_tulisan: `Jawaban Siswa untuk 10 pertanyaan`,
+        skor: score.toString(),
+        persentase: percentage.toString() + '%',
+        waktu_simpan: new Date().toISOString()
+      };
+
+      const result = await window.dataSdk.create(quizResult);
+      await sendDataToSheet(quizResult);
+    }
+
+    // ===== INITIALIZE ON PAGE LOAD =====
+    window.addEventListener('load', async () => {
+      await initDataSDK();
+      generateQuiz();
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cea66a0a0ae6d09',t:'MTc3MTIxNzE4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./saved_resource.html"></iframe>
+</body></html>
