@@ -1358,30 +1358,24 @@
     async function sendDataToSheet(data) {
   try {
 
-  const response = await fetch(APPS_SCRIPT_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-  console.log("RAW RESPONSE:", response);     // 🔥 DEBUG 1
+    return true;
 
-  const result = await response.json();
+  } catch (error) {
 
-  console.log("JSON RESULT:", result);         // 🔥 DEBUG 2
+    console.error("Error sending data:", error);
+    return false;
 
-  return result.status === "success";
-
-} catch (error) {
-
-  console.error("Error sending data:", error);
-  return false;
+  }
 }
-
-}
-
     // ===== SIMPAN PROFIL =====
     async function simpanProfil(e) {
       e.preventDefault();
