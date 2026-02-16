@@ -1484,19 +1484,21 @@ ${document.getElementById('nambahi-penutup').value}
       statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
 
       const result = await window.dataSdk.create(tulisanData);
-      await sendDataToSheet(tulisanData);
+await sendDataToSheet(tulisanData);
 
-      if (result.isOk) {
-        statusDiv.innerHTML = '<div class="status-message status-success">✅ Tulisan berhasil disimpan! Bagus sekali!</div>';
-        document.getElementById('menulis-form').reset();
-        document.getElementById('template-nirokke').style.display = 'none';
-        document.getElementById('template-nambahi').style.display = 'none';
-        setTimeout(() => {
-          statusDiv.innerHTML = '';
-        }, 3000);
-      } else {
-        statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
-      }
+if (result && result.isOk !== false) {
+  statusDiv.innerHTML = '<div class="status-message status-success">✅ Tulisan berhasil disimpan! Bagus sekali!</div>';
+  document.getElementById('menulis-form').reset();
+  document.getElementById('template-nirokke').style.display = 'none';
+  document.getElementById('template-nambahi').style.display = 'none';
+  
+  setTimeout(() => {
+    statusDiv.innerHTML = '';
+  }, 3000);
+
+} else {
+  statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
+}
     }
 
     // ===== SIMPAN REFLEKSI =====
