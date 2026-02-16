@@ -1508,47 +1508,49 @@ if (sheetOk) {
 
     // ===== SIMPAN REFLEKSI =====
     async function simpanRefleksi(e) {
-      e.preventDefault();
-      const statusDiv = document.getElementById('refleksi-status');
+  e.preventDefault();
+  const statusDiv = document.getElementById('refleksi-status');
 
-      if (!currentProfile) {
-        statusDiv.innerHTML = '<div class="status-message status-error">❌ Lengkapi profil Anda terlebih dahulu!</div>';
-        return;
-      }
+  if (!currentProfile) {
+    statusDiv.innerHTML = '<div class="status-message status-error">❌ Lengkapi profil Anda terlebih dahulu!</div>';
+    return;
+  }
 
-      const refleksiData = {
-        tipe_data: 'REFLEKSI',
-        nama_siswa: currentProfile.nama_siswa,
-        nomor_absen: currentProfile.nomor_absen,
-        kelas: currentProfile.kelas,
-        nama_sekolah: currentProfile.nama_sekolah,
-        judul_tema: 'Refleksi Pembelajaran',
-        konten_tulisan: `
+  const refleksiData = {
+    tipe_data: 'REFLEKSI',
+    nama_siswa: currentProfile.nama_siswa,
+    nomor_absen: currentProfile.nomor_absen,
+    kelas: currentProfile.kelas,
+    nama_sekolah: currentProfile.nama_sekolah,
+    judul_tema: 'Refleksi Pembelajaran',
+    konten_tulisan: `
 Hal Menarik: ${document.getElementById('refleksi-1').value}
 Bagian Sulit: ${document.getElementById('refleksi-2').value}
 Kemudahan Menulis: ${document.getElementById('refleksi-3').value}
 Ingin Pelajari: ${document.getElementById('refleksi-4').value}
-        `,
-        skor: '',
-        persentase: '',
-        waktu_simpan: new Date().toISOString()
-      };
+    `,
+    skor: '',
+    persentase: '',
+    waktu_simpan: new Date().toISOString()
+  };
 
-      statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
+  statusDiv.innerHTML = '<div class="status-message"><div class="loading"></div> Menyimpan...</div>';
 
-      const result = await window.dataSdk.create(refleksiData);
-      await sendDataToSheet(refleksiData);
+  await window.dataSdk.create(refleksiData);
+  const sheetOk = await sendDataToSheet(refleksiData);
 
-      if (result.isOk) {
-        statusDiv.innerHTML = '<div class="status-message status-success">✅ Refleksi berhasil disimpan! Terima kasih!</div>';
-        document.getElementById('refleksi-form').reset();
-        setTimeout(() => {
-          statusDiv.innerHTML = '';
-        }, 3000);
-      } else {
-        statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
-      }
-    }
+  if (sheetOk) {
+    statusDiv.innerHTML = '<div class="status-message status-success">✅ Refleksi berhasil disimpan! Terima kasih!</div>';
+    document.getElementById('refleksi-form').reset();
+
+    setTimeout(() => {
+      statusDiv.innerHTML = '';
+    }, 3000);
+
+  } else {
+    statusDiv.innerHTML = '<div class="status-message status-error">❌ Gagal menyimpan. Coba lagi.</div>';
+  }
+}
 
     // ===== QUIZ DATA =====
     const quizData = [
