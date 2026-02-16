@@ -1357,33 +1357,26 @@
 
     // ===== PENGIRIMAN DATA KE GOOGLE SHEETS =====
     async function sendDataToSheet(data) {
-      try {
-        await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          const response = await fetch(APPS_SCRIPT_URL, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-});
+  try {
 
-const result = await response.json();   // 🔥 INI KUNCINYA
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-console.log(result);                    // 🔥 DEBUG WAJIB
+    const result = await response.json();   // 🔥 INI KUNCINYA
+    console.log(result);                    // 🔥 DEBUG WAJIB
 
-return result.status === "success";
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        return true;
-      } catch (error) {
-        console.error('Error sending data to sheets:', error);
-        return false;
-      }
-    }
+    return result.status === "success";
+
+  } catch (error) {
+    console.error("Error sending data:", error);
+    return false;
+  }
+}
 
     // ===== SIMPAN PROFIL =====
     async function simpanProfil(e) {
