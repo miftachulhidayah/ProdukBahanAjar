@@ -1708,10 +1708,12 @@ Ingin Pelajari: ${document.getElementById('refleksi-4').value}
         <div class="score-display">${score} / ${quizData.length}</div>
         <div class="score-label">${percentage}%</div>
         <div style="margin-top: 12px; font-size: 0.9em;">
-          ${percentage >= 80 ? '🎉 Sempurna! Kamu sudah menguasai materi dengan baik!' : 
-            percentage >= 60 ? '👍 Bagus! Kamu sudah memahami materi cukup baik.' : 
-            '📚 Teruskan belajar! Pelajari kembali materi yang belum dipahami.'}
-        </div>
+  ${percentage >= 80 
+    ? '🎉 Sempurna! Kamu sudah menguasai materi dengan baik!' 
+    : percentage >= 60 
+      ? '👍 Bagus! Kamu sudah memahami materi cukup baik.' 
+      : '📚 Teruskan belajar! Pelajari kembali materi yang belum dipahami.'}
+</div>
       `;
 
       // Simpan quiz result
