@@ -1378,43 +1378,51 @@
 }
     // ===== SIMPAN PROFIL =====
     async function simpanProfil(e) {
-      e.preventDefault();
-      const statusDiv = document.getElementById('profile-status');
+  e.preventDefault();
+  const statusDiv = document.getElementById('profile-status');
 
-      const nama = document.getElementById('nama-siswa').value;
-      const absen = document.getElementById('nomor-absen').value;
-      const kelas = document.getElementById('kelas').value;
-      const sekolah = document.getElementById('nama-sekolah').value;
+  const nama = document.getElementById('nama-siswa').value;
+  const absen = document.getElementById('nomor-absen').value;
+  const kelas = document.getElementById('kelas').value;
+  const sekolah = document.getElementById('nama-sekolah').value;
 
-      const profileData = {
-        tipe_data: 'PROFIL',
-        nama_siswa: nama,
-        nomor_absen: absen,
-        kelas: kelas,
-        nama_sekolah: sekolah,
-        judul_tema: 'Profil Siswa',
-        konten_tulisan: 'Profil telah diisi',
-        skor: '',
-        persentase: '',
-        waktu_simpan: new Date().toISOString()
-      };
+  const profileData = {
+    tipe_data: 'PROFIL',
+    nama_siswa: nama,
+    nomor_absen: absen,
+    kelas: kelas,
+    nama_sekolah: sekolah,
+    judul_tema: 'Profil Siswa',
+    konten_tulisan: 'Profil telah diisi',
+    skor: '',
+    persentase: '',
+    waktu_simpan: new Date().toISOString()
+  };
 
-      statusDiv.innerHTML = '<div class="status-message" style="display: flex; align-items: center; gap: 10px;"><div class="loading"></div> Menyimpan...</div>';
+  statusDiv.innerHTML = '<div class="status-message">⏳ Menyimpan...</div>';
 
-      const result = await window.dataSdk.create(profileData);
-      await sendDataToSheet(profileData);
+  try {
+    await window.dataSdk.create(profileData);
+    const sheetOk = await sendDataToSheet(profileData);
 
-      if (result.isOk) {
-        currentProfile = profileData;
-        statusDiv.innerHTML = '<div class="status-message status-success">✅ Profil berhasil disimpan! Selamat datang di Petualangan Kata!</div>';
-        setTimeout(() => {
-          statusDiv.innerHTML = '';
-        }, 3000);
-      } else {
-        statusDiv.innerHTML = '<div class="status-message status-error">❌ Ada kesalahan. Silakan coba lagi.</div>';
-      }
-    }
+    currentProfile = profileData;
 
+    statusDiv.innerHTML = `
+      <div class="status-message status-success">
+        ✅ Profil berhasil disimpan!
+      </div>
+    `;
+    
+  } catch (error) {
+    console.error(error);
+
+    statusDiv.innerHTML = `
+      <div class="status-message status-error">
+        ❌ Gagal menyimpan profil
+      </div>
+    `;
+  }
+}
     // ===== SIMPAN TULISAN =====
     async function simpanTulisan(e) {
       e.preventDefault();
