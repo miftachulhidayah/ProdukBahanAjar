@@ -1312,6 +1312,16 @@
   document.getElementById('halaman-pembuka').style.display = 'none';
   document.getElementById('navbar').style.display = 'flex';
   document.getElementById('halaman-konten').style.display = 'block';
+
+  // 🔥 Reset semua halaman
+  const pages = document.querySelectorAll('[id$="-page"]');
+  pages.forEach(page => page.style.display = 'none');
+
+  // ✅ Tampilkan Profil (dashboard)
+  document.getElementById('dashboard-page').style.display = 'block';
+
+  // Scroll ke atas
+  window.scrollTo(0, 0);
 }
 
     function kembaliKeAwal() {
