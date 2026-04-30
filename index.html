@@ -1314,11 +1314,9 @@
 
     // ===== NAVIGATION FUNCTIONS =====
     function mulaiMembaca() {
-  console.log("klik tombol");
-
-  console.log("halaman-pembuka:", document.getElementById('halaman-pembuka'));
-  console.log("navbar:", document.getElementById('navbar'));
-  console.log("halaman-konten:", document.getElementById('halaman-konten'));
+  document.getElementById('halaman-pembuka').style.display = 'none';
+  document.getElementById('navbar').style.display = 'flex';
+  document.getElementById('halaman-konten').style.display = 'block';
 }
 
     function kembaliKeAwal() {
