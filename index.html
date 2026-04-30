@@ -853,8 +853,13 @@
       <h2 class="section-title">✍️ Menulis Teks Deskripsi</h2>
       <form id="menulis-form" onsubmit="simpanTulisan(event)">
        <div class="form-group">
-        <label for="pilih-tahap">Pilih Tahap</label> <select id="pilih-tahap" required="" onchange="updateTema()"> <option value="">-- Pilih Tahap --</option> <option value="NIROKKE">NIROKKE (Susun &amp; Tiru) - Tema: Rumahku</option> <option value="NAMBAHI">NAMBAHI (Kembangkan &amp; Kreasikan) - Pilih Tema Sendiri</option> </select>
-       </div>
+        <label for="pilih-tahap">Pilih Tahap</label> 
+<select id="pilih-tahap" required="" onchange="updateTema()"> 
+  <option value="">-- Pilih Tahap --</option> 
+  <option value="NIROKKE"><em>NIROKKE</em> (Susun &amp; Tiru) - Tema: Rumahku</option> 
+  <option value="NAMBAHI"><em>NAMBAHI</em> (Kembangkan &amp; Kreasikan) - Pilih Tema Sendiri</option> 
+</select>
+</div>
        <div class="form-group" id="tema-section" style="display: none;">
         <label for="pilih-tema">Pilih Tema (untuk NAMBAHI)</label> <select id="pilih-tema"> <option value="">-- Pilih Tema --</option> <option value="Rumahku">Rumahku</option> <option value="Hewan Kesukaanku">Hewan Kesukaanku</option> <option value="Sekolahku">Sekolahku</option> <option value="Taman di Rumah">Taman di Rumah</option> <option value="Kolam Renang">Kolam Renang</option> <option value="Tempat Bermain Favorit">Tempat Bermain Favorit</option> </select>
        </div>
